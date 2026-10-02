@@ -1,1 +1,76 @@
-placeholder
+{
+  "profile": "mechanical-v0",
+  "version": 1,
+  "materials": {
+    "grain": {
+      "mass_tags": {
+        "grain_mass": 1
+      }
+    },
+    "flour": {
+      "mass_tags": {
+        "grain_mass": 1
+      }
+    },
+    "wood": {
+      "mass_tags": {
+        "wood_mass": 1
+      }
+    },
+    "plank": {
+      "mass_tags": {
+        "wood_mass": 1
+      }
+    },
+    "stone": {
+      "mass_tags": {
+        "stone_mass": 1
+      }
+    },
+    "cut_stone": {
+      "mass_tags": {
+        "stone_mass": 1
+      }
+    }
+  },
+  "source_kinds": [
+    "river"
+  ],
+  "process_edges": [
+    {
+      "input": "grain",
+      "output": "flour",
+      "min_work_eu_per_input": 18
+    },
+    {
+      "input": "wood",
+      "output": "plank",
+      "min_work_eu_per_input": 12
+    },
+    {
+      "input": "stone",
+      "output": "cut_stone",
+      "min_work_eu_per_input": 24
+    }
+  ],
+  "construction_costs": {
+    "harvest": {
+      "wood": 6,
+      "stone": 2
+    },
+    "process": {
+      "wood": 4,
+      "stone": 4
+    },
+    "connector": {
+      "wood": 1
+    }
+  },
+  "limits": {
+    "max_blueprint_nodes": 16,
+    "max_world_entities": 128,
+    "max_withdraw_eu_per_tick": 8,
+    "max_expr_depth": 8,
+    "max_expr_nodes": 64
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "scenario_version": 1,
+  "scenario_id": "river_demo",
+  "tick": 0,
+  "tick_rate_hz": 10,
+  "map": {
+    "width": 32,
+    "height": 32,
+    "default_tile": "land",
+    "overrides": [
+      {
+        "cell": [
+          1,
+          1
+        ],
+        "tile": "river"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "river-1",
+      "kind": "river",
+      "cell": [
+        1,
+        1
+      ],
+      "supply_eu_per_tick": 8
+    }
+  ],
+  "warehouse": {
+    "wood": 100,
+    "stone": 100,
+    "grain": 10,
+    "flour": 0,
+    "plank": 0,
+    "cut_stone": 0
+  },
+  "entities": [],
+  "mechanical_links": []
+}

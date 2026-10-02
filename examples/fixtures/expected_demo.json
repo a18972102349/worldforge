@@ -1,0 +1,24 @@
+{
+  "basis": "derived_from_spec_not_an_engine_measurement",
+  "tick": 12,
+  "mill": {
+    "on_hand": {
+      "grain": 6,
+      "flour": 4
+    },
+    "input_escrow": {},
+    "output_reserved": {},
+    "active_job": null
+  },
+  "warehouse": {
+    "wood": 90,
+    "stone": 94,
+    "grain": 0
+  },
+  "energy_ledger": {
+    "external_withdrawn_eu": 96,
+    "conversion_loss_eu": 24,
+    "work_consumed_eu": 72,
+    "unused_dissipated_eu": 0
+  }
+}

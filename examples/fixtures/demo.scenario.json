@@ -1,0 +1,37 @@
+{
+  "scenario_format": "wf-fixture/1",
+  "notice": "Fixture runner syntax, NOT production API. Resolve aliases via actual validation and hashing before constructing commands.",
+  "initial_world": "world.demo.json",
+  "blueprints": {
+    "river_mill": "../blueprints/river_mill.json"
+  },
+  "steps": [
+    {
+      "at_tick": 1,
+      "command_id": "install-demo",
+      "kind": "INSTALL_VALIDATED_BLUEPRINT",
+      "blueprint_alias": "river_mill"
+    },
+    {
+      "at_tick": 1,
+      "command_id": "place-demo",
+      "kind": "PLACE",
+      "blueprint_alias": "river_mill",
+      "origin": [
+        2,
+        1
+      ],
+      "instance_alias": "demo"
+    },
+    {
+      "at_tick": 1,
+      "command_id": "load-demo",
+      "kind": "DEPOSIT",
+      "entity_alias": "demo/mill",
+      "item": "grain",
+      "amount": 10
+    }
+  ],
+  "run_until_tick": 12,
+  "expected_file": "expected_demo.json"
+}
