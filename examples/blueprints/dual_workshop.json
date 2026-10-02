@@ -1,1 +1,112 @@
-placeholder
+{
+  "ir_version": "0.1",
+  "capability_profile": "mechanical-v0",
+  "name": "河流双工坊",
+  "description": "同一机械能池驱动谷物与木材加工，稀缺能量由内核统一分配。",
+  "nodes": [
+    {
+      "id": "wheel",
+      "offset": [
+        0,
+        0
+      ],
+      "ports": [
+        "shaft"
+      ],
+      "inventory_capacities": {},
+      "harvest": {
+        "source_kind": "river",
+        "max_withdraw_eu": 8,
+        "efficiency": {
+          "num": 3,
+          "den": 4
+        }
+      },
+      "visual": {
+        "shape": "wheel"
+      }
+    },
+    {
+      "id": "mill",
+      "offset": [
+        1,
+        0
+      ],
+      "ports": [
+        "shaft"
+      ],
+      "inventory_capacities": {
+        "grain": 100,
+        "flour": 100
+      },
+      "process": {
+        "inputs": {
+          "grain": 1
+        },
+        "outputs": {
+          "flour": 1
+        },
+        "work_eu": 18,
+        "rate_eu_per_tick": 6,
+        "enabled_when": {
+          "op": "true"
+        }
+      },
+      "visual": {
+        "shape": "mill"
+      }
+    },
+    {
+      "id": "sawmill",
+      "offset": [
+        0,
+        1
+      ],
+      "ports": [
+        "shaft"
+      ],
+      "inventory_capacities": {
+        "wood": 100,
+        "plank": 100
+      },
+      "process": {
+        "inputs": {
+          "wood": 1
+        },
+        "outputs": {
+          "plank": 1
+        },
+        "work_eu": 12,
+        "rate_eu_per_tick": 6,
+        "enabled_when": {
+          "op": "true"
+        }
+      },
+      "visual": {
+        "shape": "block"
+      }
+    }
+  ],
+  "links": [
+    {
+      "a": {
+        "node": "wheel",
+        "port": "shaft"
+      },
+      "b": {
+        "node": "mill",
+        "port": "shaft"
+      }
+    },
+    {
+      "a": {
+        "node": "wheel",
+        "port": "shaft"
+      },
+      "b": {
+        "node": "sawmill",
+        "port": "shaft"
+      }
+    }
+  ]
+}

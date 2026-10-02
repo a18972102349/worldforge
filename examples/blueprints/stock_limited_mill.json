@@ -1,0 +1,77 @@
+{
+  "ir_version": "0.1",
+  "capability_profile": "mechanical-v0",
+  "name": "库存限制磨坊",
+  "description": "面粉库存达到5时关闭加工条件，库存降低后可恢复。",
+  "nodes": [
+    {
+      "id": "wheel",
+      "offset": [
+        0,
+        0
+      ],
+      "ports": [
+        "shaft"
+      ],
+      "inventory_capacities": {},
+      "harvest": {
+        "source_kind": "river",
+        "max_withdraw_eu": 8,
+        "efficiency": {
+          "num": 3,
+          "den": 4
+        }
+      },
+      "visual": {
+        "shape": "wheel"
+      }
+    },
+    {
+      "id": "mill",
+      "offset": [
+        1,
+        0
+      ],
+      "ports": [
+        "shaft"
+      ],
+      "inventory_capacities": {
+        "grain": 100,
+        "flour": 100
+      },
+      "process": {
+        "inputs": {
+          "grain": 1
+        },
+        "outputs": {
+          "flour": 1
+        },
+        "work_eu": 18,
+        "rate_eu_per_tick": 6,
+        "enabled_when": {
+          "op": "not",
+          "arg": {
+            "op": "inventory_at_least",
+            "item": "flour",
+            "amount": 5
+          }
+        }
+      },
+      "visual": {
+        "shape": "mill"
+      }
+    }
+  ],
+  "links": [
+    {
+      "a": {
+        "node": "wheel",
+        "port": "shaft"
+      },
+      "b": {
+        "node": "mill",
+        "port": "shaft"
+      }
+    }
+  ]
+}
