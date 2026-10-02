@@ -1,0 +1,46 @@
+[
+  {
+    "name": "ascii_keys_unicode_values",
+    "input": {
+      "z": 1,
+      "a": "河畔磨坊",
+      "ok": true,
+      "empty": null
+    },
+    "canonical_utf8_hex": "7b2261223a22e6b2b3e79594e7a3a8e59d8a222c22656d707479223a6e756c6c2c226f6b223a747275652c227a223a317d",
+    "blueprint_domain_sha256": "691426ed1243216a5039011fca23347a6970374882e5d7740f2a9e6545dc450e"
+  },
+  {
+    "name": "control_chars",
+    "input": {
+      "value": "line1\nline2\t\"\\",
+      "array": [
+        0,
+        1,
+        false
+      ]
+    },
+    "canonical_utf8_hex": "7b226172726179223a5b302c312c66616c73655d2c2276616c7565223a226c696e65315c6e6c696e65325c745c225c5c227d",
+    "blueprint_domain_sha256": "5e3160978f6ded296bbb463318a1525f64f7806c7b666e5f96633e2e99d234ce"
+  },
+  {
+    "name": "astral_value",
+    "input": {
+      "name": "wheel ⚙️",
+      "nested": {
+        "b": 2,
+        "a": 1
+      }
+    },
+    "canonical_utf8_hex": "7b226e616d65223a22776865656c20e29a99efb88f222c226e6573746564223a7b2261223a312c2262223a327d7d",
+    "blueprint_domain_sha256": "c832da70fa206ac5713b210c370cd2d2f52e226ddabfc38e521b7228896adb1d"
+  },
+  {
+    "name": "safe_integer_limit",
+    "input": {
+      "max": 9007199254740991
+    },
+    "canonical_utf8_hex": "7b226d6178223a393030373139393235343734303939317d",
+    "blueprint_domain_sha256": "17373aac64af3272599c11f059939cda9d301e332fb6af220d3a15eaee71922a"
+  }
+]

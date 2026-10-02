@@ -1,0 +1,32 @@
+[
+  {
+    "file": "invalid/overunity.json",
+    "gate": "semantic",
+    "error": "E_ENERGY_GAIN"
+  },
+  {
+    "file": "invalid/mass_creation.json",
+    "gate": "semantic",
+    "error": "E_MATERIAL_BALANCE"
+  },
+  {
+    "file": "invalid/code_field.json",
+    "gate": "schema",
+    "error": "E_SCHEMA"
+  },
+  {
+    "file": "invalid/unknown_item.json",
+    "gate": "semantic",
+    "error": "E_UNKNOWN_CAPABILITY"
+  },
+  {
+    "file": "invalid/float_token.json",
+    "gate": "parse",
+    "error": "E_NUMERIC_TYPE"
+  },
+  {
+    "file": "invalid/duplicate_key.json",
+    "gate": "parse",
+    "error": "E_DUPLICATE_KEY"
+  }
+]
