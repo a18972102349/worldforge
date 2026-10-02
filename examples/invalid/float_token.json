@@ -1,0 +1,72 @@
+{
+  "ir_version": "0.1",
+  "capability_profile": "mechanical-v0",
+  "name": "河畔磨坊",
+  "description": "河流提供外部能量，机械连接驱动谷物加工。离散游戏模型，不是流体模拟。",
+  "nodes": [
+    {
+      "id": "wheel",
+      "offset": [
+        0,
+        0
+      ],
+      "ports": [
+        "shaft"
+      ],
+      "inventory_capacities": {},
+      "harvest": {
+        "source_kind": "river",
+        "max_withdraw_eu": 8.0,
+        "efficiency": {
+          "num": 3,
+          "den": 4
+        }
+      },
+      "visual": {
+        "shape": "wheel"
+      }
+    },
+    {
+      "id": "mill",
+      "offset": [
+        1,
+        0
+      ],
+      "ports": [
+        "shaft"
+      ],
+      "inventory_capacities": {
+        "grain": 100,
+        "flour": 100
+      },
+      "process": {
+        "inputs": {
+          "grain": 1
+        },
+        "outputs": {
+          "flour": 1
+        },
+        "work_eu": 18,
+        "rate_eu_per_tick": 6,
+        "enabled_when": {
+          "op": "true"
+        }
+      },
+      "visual": {
+        "shape": "mill"
+      }
+    }
+  ],
+  "links": [
+    {
+      "a": {
+        "node": "wheel",
+        "port": "shaft"
+      },
+      "b": {
+        "node": "mill",
+        "port": "shaft"
+      }
+    }
+  ]
+}
